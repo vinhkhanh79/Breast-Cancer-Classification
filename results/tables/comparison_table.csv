@@ -1,0 +1,25 @@
+model,model_key,pca_config,pca_label,accuracy,precision,recall,f1,roc_auc,training_time,prediction_time,n_features_before_pca,n_features_after_pca
+Logistic Regression,logistic,no_pca,No PCA,0.9825,0.9861,0.9861,0.9861,0.9954,0.006583,0.000328,30,30
+SVM,svm,no_pca,No PCA,0.9825,0.9861,0.9861,0.9861,0.995,0.018247,0.001326,30,30
+Random Forest,random_forest,no_pca,No PCA,0.9474,0.9583,0.9583,0.9583,0.9937,0.357027,0.013082,30,30
+KNN,knn,no_pca,No PCA,0.9561,0.9589,0.9722,0.9655,0.9788,0.001107,1.536138,30,30
+Logistic Regression,logistic,pca_10,PCA (10 components),0.9737,0.9859,0.9722,0.979,0.9954,0.006018,0.000269,30,10
+SVM,svm,pca_10,PCA (10 components),0.9737,0.9859,0.9722,0.979,0.995,0.012129,0.001571,30,10
+Random Forest,random_forest,pca_10,PCA (10 components),0.9474,0.9459,0.9722,0.9589,0.9864,0.632929,0.024911,30,10
+KNN,knn,pca_10,PCA (10 components),0.9561,0.9589,0.9722,0.9655,0.9788,0.001253,0.002293,30,10
+Logistic Regression,logistic,pca_15,PCA (15 components),0.9649,0.9857,0.9583,0.9718,0.9964,0.010902,0.000374,30,15
+SVM,svm,pca_15,PCA (15 components),0.9825,0.9861,0.9861,0.9861,0.995,0.014243,0.001256,30,15
+Random Forest,random_forest,pca_15,PCA (15 components),0.9123,0.9429,0.9167,0.9296,0.9864,0.660494,0.029686,30,15
+KNN,knn,pca_15,PCA (15 components),0.9649,0.9595,0.9861,0.9726,0.9792,0.001633,0.00348,30,15
+Logistic Regression,logistic,pca_20,PCA (20 components),0.9825,0.9861,0.9861,0.9861,0.9967,0.009645,0.000871,30,20
+SVM,svm,pca_20,PCA (20 components),0.9825,0.9861,0.9861,0.9861,0.9954,0.011974,0.002297,30,20
+Random Forest,random_forest,pca_20,PCA (20 components),0.9298,0.9444,0.9444,0.9444,0.9841,0.679946,0.028778,30,20
+KNN,knn,pca_20,PCA (20 components),0.9649,0.9595,0.9861,0.9726,0.9792,0.000636,0.006073,30,20
+Logistic Regression,logistic,pca_95,PCA (95% variance),0.9737,0.9859,0.9722,0.979,0.9954,0.00548,0.001203,30,10
+SVM,svm,pca_95,PCA (95% variance),0.9737,0.9859,0.9722,0.979,0.995,0.013503,0.001001,30,10
+Random Forest,random_forest,pca_95,PCA (95% variance),0.9474,0.9459,0.9722,0.9589,0.9864,0.579591,0.017309,30,10
+KNN,knn,pca_95,PCA (95% variance),0.9561,0.9589,0.9722,0.9655,0.9788,0.001011,0.002352,30,10
+Logistic Regression,logistic,pca_99,PCA (99% variance),0.9649,0.9857,0.9583,0.9718,0.996,0.008027,0.000379,30,17
+SVM,svm,pca_99,PCA (99% variance),0.9825,0.9861,0.9861,0.9861,0.9954,0.012793,0.001151,30,17
+Random Forest,random_forest,pca_99,PCA (99% variance),0.9474,0.9583,0.9583,0.9583,0.9873,0.608257,0.022899,30,17
+KNN,knn,pca_99,PCA (99% variance),0.9649,0.9595,0.9861,0.9726,0.9792,0.000825,0.008352,30,17
