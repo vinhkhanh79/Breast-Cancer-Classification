@@ -1,6 +1,0 @@
-pca_config,pca_label,n_features_before_pca,n_components,cumulative_variance_explained
-pca_10,PCA (10 components),30,10,0.9527
-pca_15,PCA (15 components),30,15,0.9868
-pca_20,PCA (20 components),30,20,0.9958
-pca_95,PCA (95% variance),30,10,0.9527
-pca_99,PCA (99% variance),30,17,0.9915
