@@ -21,22 +21,14 @@ def render(lang: str = DEFAULT_LANGUAGE) -> None:
     """Render the Prediction page."""
     st.title(t("prediction_title", lang))
 
-    model_options = api.get_model_options()
     pca_options = api.get_pca_options(lang)
+    model_key = "logistic"
 
-    col1, col2 = st.columns(2)
-    with col1:
-        model_key = st.selectbox(
-            t("model_label", lang),
-            options=list(model_options.keys()),
-            format_func=lambda k: model_options[k],
-        )
-    with col2:
-        pca_key = st.selectbox(
-            t("pca_components_label", lang),
-            options=list(pca_options.keys()),
-            format_func=lambda k: pca_options[k],
-        )
+    pca_key = st.selectbox(
+        t("pca_components_label", lang),
+        options=list(pca_options.keys()),
+        format_func=lambda k: pca_options[k],
+    )
 
     tab_manual, tab_upload = st.tabs([t("tab_manual", lang), t("tab_upload", lang)])
 

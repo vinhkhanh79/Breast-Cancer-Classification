@@ -64,20 +64,12 @@ def _render_pca_analysis(lang: str) -> None:
 
 
 def _render_roc_and_confusion(lang: str) -> None:
-    model_options = api.get_model_options()
+    model_key = "logistic"
     pca_options = api.get_pca_options(lang)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        model_key = st.selectbox(
-            t("model_label", lang), options=list(model_options.keys()),
-            format_func=lambda k: model_options[k], key="viz_model_key",
-        )
-    with col2:
-        pca_key = st.selectbox(
-            t("pca_configuration_label", lang), options=list(pca_options.keys()),
-            format_func=lambda k: pca_options[k], key="viz_roc_pca_key",
-        )
+    pca_key = st.selectbox(
+        t("pca_configuration_label", lang), options=list(pca_options.keys()),
+        format_func=lambda k: pca_options[k], key="viz_roc_pca_key",
+    )
 
     try:
         col_a, col_b = st.columns(2)

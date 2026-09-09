@@ -83,8 +83,7 @@ def get_class_distribution_chart(lang: str = DEFAULT_LANGUAGE) -> go.Figure:
 def get_model_options() -> Dict[str, str]:
     """Return {model_key: display_name} for the model selector.
 
-    Model/algorithm names (Logistic Regression, SVM, ...) are technical
-    terms kept identical in both languages.
+    The app intentionally keeps a single classifier: Logistic Regression.
     """
     return dict(MODEL_FILES)
 

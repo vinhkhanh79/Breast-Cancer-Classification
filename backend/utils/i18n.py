@@ -56,12 +56,12 @@ _TEXTS = {
         "bằng Học máy",
     },
     "project_objective": {
-        "en": "Compare the impact of PCA-based dimensionality reduction on the "
-        "performance of several classification models (Logistic Regression, "
-        "SVM, Random Forest, KNN) applied to breast cancer diagnosis.",
-        "vi": "So sánh tác động của việc giảm chiều dữ liệu bằng PCA đến hiệu "
-        "năng của nhiều mô hình phân loại (Logistic Regression, SVM, Random "
-        "Forest, KNN) áp dụng cho chẩn đoán ung thư vú.",
+        "en": "Evaluate the impact of PCA-based dimensionality reduction on the "
+        "performance of the single Logistic Regression classifier for breast "
+        "cancer diagnosis.",
+        "vi": "Đánh giá tác động của việc giảm chiều dữ liệu bằng PCA đến hiệu "
+        "năng của mô hình Logistic Regression duy nhất trong chẩn đoán ung "
+        "thư vú.",
     },
     "dataset_name": {
         "en": "Breast Cancer Wisconsin (Diagnostic) Dataset",

@@ -3,9 +3,9 @@
 **Application of Dimensionality Reduction for Breast Cancer Classification Using Machine Learning**
 
 A Streamlit web application, built with a strict **Frontend / Backend / Machine
-Learning** separation (Clean Architecture), that compares Logistic Regression,
-SVM, Random Forest and KNN with and without PCA-based dimensionality reduction
-on the Breast Cancer Wisconsin (Diagnostic) dataset.
+Learning** separation (Clean Architecture), that evaluates the Logistic
+Regression classifier across PCA configurations on the Breast Cancer
+Wisconsin (Diagnostic) dataset.
 
 ```
 Frontend  →  Backend Service  →  Machine Learning Model  →  Prediction
@@ -36,9 +36,9 @@ This will:
 2. Split into train/test and fit a `StandardScaler`.
 3. Fit PCA for **6 configurations**: No PCA, 10 components, 15 components,
    20 components, 95% explained variance, 99% explained variance.
-4. Train **Logistic Regression, SVM, Random Forest, KNN** for every one of
-   those 6 configurations (24 models total).
-5. Evaluate every (model, PCA config) pair on the held-out test set.
+4. Train the single **Logistic Regression** model for every one of those
+   6 configurations.
+5. Evaluate every PCA configuration on the held-out test set.
 6. Save every artifact to `backend/models/` and every metric to
    `results/metrics/` + `results/tables/comparison_table.csv`.
 
@@ -55,12 +55,13 @@ Then open the local URL Streamlit prints (usually `http://localhost:8501`).
 ## 4. Demo flow
 
 1. **Dashboard** — project overview, dataset size, class distribution.
-2. **Prediction** — pick a model + PCA configuration, either fill in the
+2. **Prediction** — pick the PCA configuration, either fill in the
    30-feature form (pre-filled with dataset means) or upload a `patient.csv`
    for batch prediction; download `prediction_result.csv`.
 3. **Visualization** — Explained Variance, PCA Scatter 2D/3D, ROC Curve,
    Confusion Matrix, Correlation Heatmap, Feature Distribution (all Plotly).
-4. **Model Comparison** — full metrics table, bar chart, radar chart.
+4. **Model Comparison** — full metrics table, bar chart, radar chart across
+   the PCA variants for the single Logistic Regression model.
 5. **About** — project / student / lecturer / dataset / GitHub info.
 
 ---

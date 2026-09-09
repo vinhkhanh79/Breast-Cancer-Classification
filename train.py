@@ -11,8 +11,7 @@ Pipeline:
     2. Train/test split + StandardScaler
     3. Fit PCA for every configuration: No PCA, 10, 15, 20 components,
        95% and 99% explained variance
-    4. Train 4 models (Logistic Regression, SVM, Random Forest, KNN) for
-       EVERY PCA configuration
+    4. Train the single Logistic Regression model for EVERY PCA configuration
     5. Evaluate every (model, PCA config) pair on the test set
     6. Persist:
         - backend/models/scaler.pkl
@@ -20,7 +19,7 @@ Pipeline:
         - backend/models/pca_<config>.pkl           (per PCA configuration)
         - backend/models/<model>_<config>.pkl       (per model x PCA configuration)
         - results/metrics/<model>_<config>.json     (per-pair metrics)
-        - results/tables/comparison_table.csv       (all pairs, one row each)
+        - results/tables/comparison_table.csv       (all PCA variants for the single model)
         - results/tables/descriptive_statistics.csv
         - results/tables/class_distribution.csv
 

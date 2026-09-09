@@ -1,9 +1,9 @@
 """
 training_service.py
 ====================
-Responsible for training the four classification models
-(Logistic Regression, SVM, Random Forest, KNN) for every PCA
-configuration ("no_pca", "pca_10", "pca_15", "pca_20", "pca_95", "pca_99").
+Responsible for training the single classification model
+(Logistic Regression) for every PCA configuration
+("no_pca", "pca_10", "pca_15", "pca_20", "pca_95", "pca_99").
 
 Called only from train.py — never from the Streamlit frontend directly.
 """
@@ -14,21 +14,13 @@ from typing import Any, Dict, Tuple
 
 import numpy as np
 from sklearn.decomposition import PCA
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
 
 from backend.preprocessing.preprocess import RANDOM_STATE
 from backend.utils.helpers import print_section, timed
 
 MODEL_FACTORIES: Dict[str, Any] = {
     "logistic": lambda: LogisticRegression(max_iter=5000, random_state=RANDOM_STATE),
-    "svm": lambda: SVC(kernel="rbf", probability=True, random_state=RANDOM_STATE),
-    "random_forest": lambda: RandomForestClassifier(
-        n_estimators=300, random_state=RANDOM_STATE
-    ),
-    "knn": lambda: KNeighborsClassifier(n_neighbors=5),
 }
 
 
@@ -57,7 +49,7 @@ def train_one_model(
 def train_all_models_for_config(
     X_train: np.ndarray, y_train: np.ndarray
 ) -> Dict[str, Tuple[Any, float]]:
-    """Train Logistic Regression, SVM, Random Forest and KNN on the given data.
+    """Train the single Logistic Regression model on the given data.
 
     Args:
         X_train: training features (already scaled, and PCA-transformed
@@ -67,7 +59,7 @@ def train_all_models_for_config(
     Returns:
         Dict mapping model_key -> (fitted_model, training_time_seconds)
     """
-    print_section(f"Training models on {X_train.shape[1]}-dimensional input")
+    print_section(f"Training model on {X_train.shape[1]}-dimensional input")
     results: Dict[str, Tuple[Any, float]] = {}
     for model_key in MODEL_FACTORIES:
         model, elapsed = train_one_model(model_key, X_train, y_train)

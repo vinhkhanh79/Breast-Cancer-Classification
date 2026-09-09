@@ -24,9 +24,6 @@ from backend.utils.helpers import load_artifact
 
 MODEL_FILES = {
     "logistic": "Logistic Regression",
-    "svm": "SVM",
-    "random_forest": "Random Forest",
-    "knn": "KNN",
 }
 
 
@@ -59,7 +56,7 @@ def predict_single(
     """Predict a single patient record entered manually in the Prediction page.
 
     Args:
-        model_key: one of {"logistic", "svm", "random_forest", "knn"}.
+        model_key: currently only "logistic" is supported.
         pca_key: one of {"no_pca", "pca_10", "pca_15", "pca_20", "pca_95", "pca_99"}.
         feature_values: dict of the 30 original feature values.
 
